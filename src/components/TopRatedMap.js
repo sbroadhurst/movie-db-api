@@ -7,9 +7,10 @@ class TopRatedMap extends React.Component {
       <div
         style={{
           width: '80%',
-
+          height: '20vw',
           overflow: 'auto',
-          display: 'inline'
+          display: 'inline',
+          margin: '2%'
         }}
       >
         {this.props.topRated.map((info, index) => {

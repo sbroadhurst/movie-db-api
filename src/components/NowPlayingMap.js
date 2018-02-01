@@ -9,7 +9,8 @@ class NowPlayingMap extends React.Component {
           width: '80%',
           height: '20vw',
           overflow: 'auto',
-          display: 'inline'
+          display: 'inline',
+          margin: '2%'
         }}
       >
         {this.props.nowPlaying.map((info, index) => {

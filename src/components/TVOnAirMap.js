@@ -9,7 +9,8 @@ class TVOnAirMap extends React.Component {
           width: '80%',
           height: '20vw',
           overflow: 'auto',
-          display: 'inline'
+          display: 'inline',
+          margin: '2%'
         }}
       >
         {this.props.tvOnAir.map((info, index) => {

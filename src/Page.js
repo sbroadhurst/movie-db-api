@@ -1,6 +1,6 @@
 import React from 'react'
 import PopularMap from './components/PopularMap'
-import LatestMap from './components/LatestMap'
+//import LatestMap from './components/LatestMap'
 import TopRatedMap from './components/TopRatedMap'
 import UpComingMap from './components/UpComingMap'
 import NowPlayingMap from './components/NowPlayingMap'
@@ -134,6 +134,15 @@ class Page extends React.Component {
   render() {
     const { popular, topRated, upcoming, nowPlaying, tvOnAir } = this.state
     console.log('hello from render')
+    const style = {
+      border: '1px solid black'
+    }
+    const text = {
+      border: '1px solid black',
+      width: '100px',
+      padding: '10px',
+      fontWeight: 'bold'
+    }
     if (this.state.selectValue === 'movie')
       return (
         <div>
@@ -141,10 +150,22 @@ class Page extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <NowPlayingMap nowPlaying={nowPlaying} />
-          <PopularMap popular={popular} />
-          <TopRatedMap topRated={topRated} />
-          <UpComingMap upcoming={upcoming} />
+          <p style={text}>Now Playing</p>
+          <div style={style}>
+            <NowPlayingMap nowPlaying={nowPlaying} />
+          </div>
+          <p style={text}>Popular</p>
+          <div style={style}>
+            <PopularMap popular={popular} />{' '}
+          </div>
+          <p style={text}>Top Rated</p>
+          <div style={style}>
+            <TopRatedMap topRated={topRated} />{' '}
+          </div>
+          <p style={text}>Upcoming </p>
+          <div style={style}>
+            <UpComingMap upcoming={upcoming} />
+          </div>
         </div>
       )
     if (this.state.selectValue === 'tv')
@@ -154,9 +175,18 @@ class Page extends React.Component {
             <option value="movie">movie </option>
             <option value="tv"> tv </option>
           </select>
-          <PopularMap popular={popular} />
-          <TopRatedMap topRated={topRated} />
-          <TVOnAirMap tvOnAir={tvOnAir} />
+          <p style={text}>Popular</p>
+          <div style={style}>
+            <PopularMap popular={popular} />{' '}
+          </div>
+          <p style={text}>Top Rated</p>
+          <div style={style}>
+            <TopRatedMap topRated={topRated} />{' '}
+          </div>
+          <p style={text}>TV On Air</p>
+          <div style={style}>
+            <TVOnAirMap tvOnAir={tvOnAir} />
+          </div>
         </div>
       )
   }

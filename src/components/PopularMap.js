@@ -6,9 +6,11 @@ class PopularMap extends React.Component {
     return (
       <div
         style={{
-          width: '100%',
-          height: '10vw',
-          overflow: 'auto'
+          width: '80%',
+          height: '20vw',
+          overflow: 'auto',
+          display: 'inline',
+          margin: '2%'
         }}
       >
         {this.props.popular.map((info, index) => {
